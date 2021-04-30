@@ -44,12 +44,14 @@
             android:layout_weight="1"
             android:text="+"
             android:textSize="30sp"
+            android:layout_margin="10dp"
             tools:ignore="ButtonStyle" />
         <Button
             android:id="@+id/Sub"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_margin="10dp"
             android:text="-"
             android:textSize="30sp"/>
         <Button
@@ -57,6 +59,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_margin="10dp"
             android:text="*"
             android:textSize="30sp"/>
         <Button
@@ -64,15 +67,50 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:layout_margin="10dp"
             android:text="/"
             android:textSize="30sp"/>
     </LinearLayout>
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/textViewAns"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:text="Answer is"
         android:textSize="30sp"
         android:gravity="center"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:gravity="center"
+        android:onClick="returnResult"
+        android:textColor="#000000"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/historyLabel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:text="History"
+        android:textSize="30sp" />
+
+    <ScrollView
+        android:id="@+id/SCROLLER_ID"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="vertical"
+        android:fillViewport="true">
+        <TextView
+            android:id="@+id/history"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:textColor="#000"
+            android:textSize="20sp"
+            />
+    </ScrollView>
 </LinearLayout>

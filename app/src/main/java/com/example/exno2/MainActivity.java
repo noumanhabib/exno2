@@ -1,3 +1,4 @@
+
 package com.example.exno2;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,6 +20,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button Mul;
     Button Div;
     TextView Result;
+    TextView History;
+
+    float mainResult;
+
+    String HistoryData;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -32,7 +38,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Mul =  findViewById(R.id.Mul);
         Div =  findViewById(R.id.Div);
         Result =  findViewById(R.id.textView);
-
+        History =  findViewById(R.id.history);
+        HistoryData = "";
         // set a listener
         Add.setOnClickListener(this);
         Sub.setOnClickListener(this);
@@ -75,6 +82,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         }
 
         Result.setText(num1 + " " + oper + " " + num2 + " = " + result);
+        HistoryData = (num1 + " " + oper + " " + num2 + " = " + result) + "\n" + HistoryData;
+        mainResult = result;
+
+        History.setText(HistoryData);
     }
 
+    public void returnResult(View view) {
+        Num1.setText(Float.toString(mainResult));
+    }
 }
